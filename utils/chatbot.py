@@ -1,4 +1,3 @@
-# Import the necessary libraries
 from openai import OpenAI
 import utils.passwords
 import pandas as pd
