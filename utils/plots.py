@@ -3,7 +3,22 @@ import pandas as pd
 import utils.helpers
 
 
-def create_player_plot(data, attributes, player_name, position, league, season, quality):
+def create_player_plot(data: pd.DataFrame, attributes: list[str], player_name: str, position: str, league: str, season: str, quality: str) -> alt.Chart:
+    """
+    Creates a plot for a specific player, comparing their attributes to other players in the same position.
+
+    Parameters:
+    data (pd.DataFrame): The dataset containing player information.
+    attributes (List[str]): A list of attributes to be used for evaluating the player.
+    player_name (str): The name of the player.
+    position (str): The position of the player.
+    league (str): The league in which the player plays.
+    season (str): The season for which the data is being analyzed.
+    quality (str): The quality metric used for player evaluation.
+
+    Returns:
+    alt.Chart: An Altair chart object representing the player plot.
+    """
     x_labels = utils.helpers.create_x_labels()
     y_labels = utils.helpers.create_y_labels()
 
