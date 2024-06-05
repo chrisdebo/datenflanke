@@ -7,7 +7,8 @@ Dieses Repository wird so als DockerContainer auf einem eigenen Server geladen u
 
 ## Hauptfunktionen
 
-- **Spielerbewertung**: Generiert eine Bewertung eines Spielers basierend auf seinen Attributen und Daten. Die Bewertung wird in Form von DocStrings und Typenannotationen ausgegeben.
+- **Spielerbewertung**: Generiert eine Bewertung eines Spielers basierend auf seinen Attributen und Daten. 
 - **Spielerplot**: Erstellt einen Plot für einen bestimmten Spieler, der seine Attribute mit anderen Spielern auf der gleichen Position vergleicht.
-- **Teamspieleranzeige**: Zeigt einen Expander für jeden Spieler in einem bestimmten Team an und erstellt einen Plot für jeden Spieler.
-- **Spieler Suche**: Ermöglicht die Suche nach Spielern basierend auf Liga, Saison, Position und gespielten Minuten.
+- **Teamspieleranzeige**: Zeigt alle Spieler eines Teams auf einer bestimmten Position und vergleicht diese Spieler mit dem Rest der Liga.
+- **Spieler Suche**: Ermöglicht die Suche nach Spielern basierend auf Liga, Saison, Position und gespielten Minuten zu suchen. Dabei können eigene Kriterien ausgewählt und gewichtet werden.
+- **Chatbot Funktion**: Mittels OpenAI Schnittstelle wird mit den selben Daten, aus denen der Plot generiert wird, ein prompt erstellt, dass eine Spielerbewertung auf deutsch und englisch ausgibt.
