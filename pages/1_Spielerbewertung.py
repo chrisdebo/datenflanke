@@ -2,6 +2,9 @@ import streamlit as st
 import utils.helpers as helpers
 import utils.plots as plots
 from utils.chatbot import get_player_evaluation, get_player_evaluation_german
+from utils.passwords import inject_ga
+
+inject_ga()
 
 # Setup the layout
 #st.set_page_config(layout="wide")
@@ -61,12 +64,6 @@ with st.spinner('Schreibe Spielerbewertung...'):
     st.write('🇩🇪󠁧󠁢󠁥󠁿')
     evaluation = get_player_evaluation_german(player, attributes, data)
     st.success(evaluation)
-
-# # Noch ein Plot mit einem Attribut als Beispiel
-# attributes = get_attributes_details('hold_up_play_z')
-# # Plot erstellen
-# chart = plots.create_player_plot(data, attributes, player, position, selected_league_display, selected_season_display)
-# st.altair_chart(chart, use_container_width=True)
 
 # Footer
 st.markdown('---')  # This creates a horizontal line
