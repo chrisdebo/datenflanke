@@ -15,6 +15,7 @@ st.sidebar.header('', divider=True)
 # Main content area
 st.header('Willkommen auf datenflanke.de – Ein Projekt zur Spielerbewertung ⚽', divider=True)
 st.info("Wie ich diese Anwendung erstellt habe, kannst du ausführlich in meiner [Projektdokumentation](http://docs.datenflanke.de) nachlesen")
+st.error("Die Benutzung ist für Webbrowser optimiert. Die Anzeige von Grafiken auf mobilen Geräten kann problematisch sein.")
 st.markdown('''    
     #### 🔎 Einblicke in die Spielerleistung
     Mithilfe eines Machine-Learning-Algorithmus, basierend auf Daten aus über 4000 Spielen, wurden mehr als 12 Millionen Aktionen bewertet. Aus diesen Berechnungen geht hervor, wie stark jede Aktion die Chance auf ein Tor oder ein Gegentor beeinflusst. Wo herkömmliche erweiterte Statistiken meist nur Torschüsse (expected Goals Modelle) miteinbeziehen, berücksichtigt dieses Modell auch die Qualität jeder Aktion im Spiel (Pass, Dribbling, Einwurf ...), sowie die Position des Spielers und viele weitere Faktoren.
