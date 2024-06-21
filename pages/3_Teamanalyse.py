@@ -46,7 +46,7 @@ minutes_played_min = st.sidebar.number_input('Minimale Spielzeit', min_value=0, 
 data = data[data['minutes_played'] >= minutes_played_min]
 
 # Main content area
-st.header('Bewertung von ' + team + ' ' + selected_quality_display, divider=True)
+st.header('Bewertung von ' + team + ' - ' + selected_quality_display, divider=True)
 
 # Variablen übergeben die geplottet werden sollen
 attributes = helpers.get_attributes_details(selected_quality, position)

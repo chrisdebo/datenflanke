@@ -2,6 +2,7 @@ import streamlit as st
 from utils.helpers import preload_data
 from utils.passwords import inject_ga
 
+
 inject_ga()
 
 # Setup the layout
@@ -16,10 +17,10 @@ st.header('Willkommen auf datenflanke.de – Ein Projekt zur Spielerbewertung �
 st.info("Wie ich diese Anwendung erstellt habe, kannst du ausführlich in meiner [Projektdokumentation](http://docs.datenflanke.de) nachlesen")
 st.markdown('''    
     #### 🔎 Einblicke in die Spielerleistung
-    Mithilfe eines Machine-Learning-Algorithmus, basierend auf Daten aus über 4000 Spielen, wurden mehr als 12 Millionen Aktionen bewertet. Aus diesen Berechnungen geht hervor, wie stark jede Aktion die Chance auf ein Tor oder ein Gegentor beeinflusst. Wo herkömmliche erweiterte Statistiken meist nur Torschüsse (expected Goals Modelle) miteinbeziehen, berücksichtigt unser Modell auch die Qualität jeder Aktion im Spiel (Pass, Dribbling, Einwurf ...), sowie die Position des Spielers und viele weitere Faktoren.
+    Mithilfe eines Machine-Learning-Algorithmus, basierend auf Daten aus über 4000 Spielen, wurden mehr als 12 Millionen Aktionen bewertet. Aus diesen Berechnungen geht hervor, wie stark jede Aktion die Chance auf ein Tor oder ein Gegentor beeinflusst. Wo herkömmliche erweiterte Statistiken meist nur Torschüsse (expected Goals Modelle) miteinbeziehen, berücksichtigt dieses Modell auch die Qualität jeder Aktion im Spiel (Pass, Dribbling, Einwurf ...), sowie die Position des Spielers und viele weitere Faktoren.
 
     #### 🥇 Präzise und Objektive Spielerbewertungen
-    Wir kombinieren diese Daten mit über 40 weiteren Statistiken, um umfassende Spielerqualitäten zu ermitteln, die zuvor sorgfältig aus einem Team professioneller Scouts ermittelt wurden. Die Ergebnisse werden durch statistische Verfahren vergleichbar gemacht, sodass schnell sichtbar wird, wie Spieler relativ zu anderen abschneiden.
+    Diese Daten werden mit über 40 weiteren Statistiken kombiniert, um umfassende Spielerqualitäten zu ermitteln, die zuvor sorgfältig aus früheren Studien und in Anlehnung anderer Scoutingtools ermittelt wurden. Die Ergebnisse werden durch statistische Verfahren vergleichbar gemacht, sodass schnell sichtbar wird, wie Spieler relativ zu anderen abschneiden.
     
     #### 📊 Anpassbare Analysen
     Über die Spielersuche kannst Du spezifische Spielerqualitäten auswählen und gewichten, um die besten Spieler nach deinen Kriterien zu finden.

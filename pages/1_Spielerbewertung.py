@@ -54,13 +54,13 @@ st.altair_chart(chart, use_container_width=True)
 
 
 # Beschreibung der Spielerbewertung
-with st.spinner('Schreibe Spielerbewertung...'):
+with st.spinner('Generiere Spielerbewertung...'):
     st.write('🏴󠁧󠁢󠁥󠁮󠁧󠁿')
     evaluation = get_player_evaluation(player, attributes, data)
     st.success(evaluation)
 
     # Beschreibung der Spielerbewertung
-with st.spinner('Schreibe Spielerbewertung...'):
+with st.spinner('Generiere Spielerbewertung...'):
     st.write('🇩🇪󠁧󠁢󠁥󠁿')
     evaluation = get_player_evaluation_german(player, attributes, data)
     st.success(evaluation)
