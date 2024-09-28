@@ -338,11 +338,11 @@ def display_team_players(data: pd.DataFrame, team: str, position: str, quality: 
             # Variablen übergeben die geplottet werden sollen
             attributes = get_attributes_details(selected_quality, position)
             # Plot erstellen
-            chart = plots.create_teams_plot(data, attributes, team, position, selected_league_display, selected_season_display, selected_quality_display)
+            chart = plots.create_player_plot(data, attributes, player['player_name'], position, selected_league_display, selected_season_display, selected_quality_display)
             if chart:
                 st.altair_chart(chart, use_container_width=True)
                 with st.spinner('Schreibe Spielerbewertung...'):
-                    evaluation = chatbot.get_player_evaluation_german(player['player_name'], attributes, data)
+                    evaluation = chatbot.get_player_evaluation(player['player_name'], attributes, data)
                     st.success(evaluation)
             else:
                 st.write(f"No data available for player {player['player_name']} in position {position}.")

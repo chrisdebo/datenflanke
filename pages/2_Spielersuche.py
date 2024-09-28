@@ -1,6 +1,9 @@
 import streamlit as st
 import utils.helpers as helpers
 import utils.plots as plots
+from utils.passwords import inject_ga
+
+inject_ga()
 
 # Setup the layout
 st.set_page_config(layout="wide")
