@@ -29,6 +29,7 @@ def create_leagues_dict_with_flags():
 
 def create_seasons_dict():
     seasons = {
+        "2024/25": "2024_2025",
         "2023/24": "2023_2024",
         "2022/23": "2022_2023"
     }
@@ -272,7 +273,7 @@ def preload_data():
         "super_lig",
     ]
 
-    seasons = ["2022_2023", "2023_2024"]
+    seasons = ["2022_2023", "2023_2024", '2024_2025']
     #seasons = ["2023_2024"]
     #leagues = ["bundesliga"]
 
@@ -346,3 +347,248 @@ def display_team_players(data: pd.DataFrame, team: str, position: str, quality: 
                     st.success(evaluation)
             else:
                 st.write(f"No data available for player {player['player_name']} in position {position}.")
+
+def create_team_colors():
+    team_colors = {
+        'AC Milan': '#FB090B',  # Rot
+        'Augsburg': '#BA3733',  # Rot
+        'Atletico': '#CB3524',  # Rot-Weiß
+        'Arsenal': '#EF0107',  # Rot
+        'Aston Villa': '#670E36',  # Weinrot
+        'Athletic Bilbao': '#BB0000',  # Dunkelrot
+        'Atalanta': '#1F2F56',  # Dunkelblau
+        'Auxerre': '#123163',  # Blau
+        'AC Ajaccio': '#ED1C24',  # Rot
+        'AEK Athens': '#FFE600',  # Gelb
+        'AEK Larnaca': '#0033A0',  # Blau
+        'AZ Alkmaar': '#FF0000',  # Rot
+        'Adana Demirspor': '#0055A4',  # Blau
+        'Ajax': '#FF4500',  # Orange
+        'Alanyaspor': '#FF8C00',  # Orange
+        'Almere City FC': '#FF0000',  # Rot
+        'Almeria': '#BA0C2F',  # Dunkelrot
+        'Anderlecht': '#0000FF',  # Blau
+        'Angers': '#000000',  # Schwarz
+        'Ankaragucu': '#0047AB',  # Dunkelblau
+        'Antalyaspor': '#E32636',  # Rot
+        'Aris Limassol': '#FFFF00',  # Gelb
+        'Arminia Bielefeld': '#004C8C',  # Blau
+        'Arouca': '#FFD700',  # Gold
+
+        'Barcelona': '#004D98',  # Blau und Rot
+        'Bayern': '#DC052D',  # Rot
+        'Benfica': '#E20E0E',  # Rot
+        'Besiktas': '#000000',  # Schwarz
+        'Bochum': '#1E73BE',  # Blau
+        'Borussia Dortmund': '#DAA520',  # Gelb
+        'Borussia M.Gladbach': '#00A66C',  # Grün
+        'Brentford': '#FFC20E',  # Gelb
+        'Brighton': '#0057B8',  # Blau
+        'Bristol City': '#FF0000',  # Rot
+        'Burnley': '#6C1D45',  # Burgund
+        'Birmingham': '#0072CE',  # Blau
+        'Blackburn': '#0000FF',  # Blau
+        'Blackpool': '#FFA500',  # Orange
+        'Boavista': '#000000',  # Schwarz
+        'Bodoe/Glimt': '#FFD700',  # Gold
+        'Bologna': '#1E73BE',  # Blau
+        'Bournemouth': '#DA291C',  # Rot
+        'Braga': '#AD2121',  # Rot
+        'Cadiz': '#FFCD00',  # Dunkelgelb
+        'Cagliari': '#D4001F',  # Rot
+        'Celtic': '#008000',  # Grün
+        'Chelsea': '#034694',  # Blau
+        'Clermont Foot': '#800020',  # Burgund
+        'Club Bruges': '#0053A0',  # Blau
+        'Copenhagen': '#00A9E0',  # Hellblau
+        'Crystal Palace': '#1B458F',  # Blau
+        'Darmstadt': '#EA6A47',  # Orange
+        'Deportivo Alaves': '#0D47A1',  # Blau
+        'Dinamo Zagreb': '#002366',  # Dunkelblau
+        'Eintracht Frankfurt': '#E1000F',  # Rot
+        'Elche': '#005C1F',  # Dunkelgrün
+        'Empoli': '#1E90FF',  # Hellblau
+        'Espanyol': '#1E90FF',  # Blau
+        'Everton': '#003399',  # Blau
+
+        'Cambuur': '#FFD700',  # Gold
+        'Cardiff': '#0000FF',  # Blau
+        'Casa Pia AC': '#8B0000',  # Dunkelrot
+        'Celta Vigo': '#00529F',  # Dunkelblau
+        'Cercle Bruges': '#008000',  # Grün
+        'Chaves': '#FFD700',  # Gold
+        'Coventry': '#007FFF',  # Blau
+        'Cremonese': '#E30613',  # Rot
+        'Dynamo Kyiv': '#0000FF',  # Blau
+        'Eintracht Braunschweig': '#FDB913',  # Gold
+        'Elversberg': '#0047AB',  # Dunkelblau
+        'Estoril': '#FFD700',  # Gold
+        'Estrela da Amadora': '#FF4500',  # Orange
+        'Eupen': '#000000',  # Schwarz
+        'Excelsior': '#FF0000',  # Rot
+
+        'FC Koln': '#E31E24',  # Rot
+        'FC Midtjylland': '#D41243',  # Dunkelrot
+        'FC Sheriff': '#FEDD00',  # Gold
+        'FC Utrecht': '#FF4500',  # Orange
+        'FC Zuerich': '#0000FF',  # Blau
+        'FK Crvena Zvezda': '#C8102E',  # Rot
+        'Feyenoord': '#FF0000',  # Rot
+        'Fiorentina': '#7C2D83',  # Violett
+        'Fortuna Duesseldorf': '#E31E24',  # Gold
+        'Freiburg': '#E30613',  # Rot
+        'Fulham': '#CC0000',  # Rot
+        'Galatasaray': '#FF6700',  # Orange
+        'Genoa': '#CF1020',  # Rot und Blau
+        'Getafe': '#0050BC',  # Blau
+        'Girona': '#ED1C24',  # Rot
+        'Granada': '#CF142B',  # Dunkelrot
+        'Greuther Fuerth': '#009E60',  # Grün
+        'Hertha Berlin': '#005CA9',  # Blau
+        'Hoffenheim': '#0077C0',  # Blau
+        'Huddersfield': '#0BDA51',  # Hellgrün
+        'Hull': '#FFA500',  # Orange
+
+        'FC Emmen': '#FFD700',  # Gold
+        'FC Groningen': '#008000',  # Grün
+        'FC Heidenheim': '#003b79',  # Blau
+        'FC Volendam': '#F08080',  # Hellrot
+        'Famalicao': '#0000FF',  # Blau
+        'Farense': '#FF4500',  # Orange
+        'Fatih Karagumruk': '#FF0000',  # Rot
+        'Fenerbahce': '#FFFF00',  # Gelb
+        'Ferencvaros': '#008000',  # Grün
+        'Fortuna Sittard': '#FFD700',  # Gold
+        'Frosinone': '#FFDE00',  # Goldgelb
+        'Gaziantep FK': '#FF0000',  # Rot
+        'Genk': '#0000FF',  # Blau
+        'Gent': '#2E8B57',  # Seegrün
+        'Gil Vicente': '#FFD700',  # Gold
+        'Giresunspor': '#228B22',  # Waldgrün
+        'Go Ahead Eagles': '#FFFF00',  # Gelb
+        'HJK': '#0000CD',  # Dunkelblau
+        'Haecken': '#FFD700',  # Gold
+        'Hamburg': '#0000FF',  # Blau
+        'Hannover': '#D11241',  # Dunkelrot
+        'Hansa Rostock': '#0000FF',  # Blau
+        'Hatayspor': '#FF6347',  # Tomatenrot
+        'Heracles': '#000000',  # Schwarz
+        'Holstein Kiel': '#0000FF',  # Blau
+
+        'Inter': '#0057A1',  # Blau
+        'Juventus': '#000000',  # Schwarz
+        'LASK': '#000000',  # Schwarz
+        'Las Palmas': '#FFC72C',  # Dunkelgelb
+        'Lazio': '#87CEEB',  # Himmelblau
+        'Le Havre': '#004B87',  # Dunkelblau
+        'Lecce': '#FFCB05',  # Gelb
+        'Leeds': '#FFCD00',  # Gelb
+        'Leicester': '#0053A0',  # Blau
+        'Lens': '#FDE103',  # Dunkelgelb
+        'Lille': '#DA251D',  # Rot
+        'Lorient': '#FFA500',  # Orange
+        'Lyon': '#2F407B',  # Dunkelblau
+        'Marseille': '#1E7FCB',  # Blau
+        'Metz': '#E30613',  # Rot
+        'Monaco': '#ED2939',  # Rot
+        'Montpellier': '#E7005A',  # Pink
+        'Nantes': '#FFEC00',  # Dunkelgelb
+        'Nice': '#ED1C24',  # Rot
+        'PSG': '#004170',  # Dunkelblau
+        'PSV Eindhoven': '#FF0000',  # Rot
+        'Porto': '#0050B5',  # Blau
+        'Preston': '#FFFFFF',  # Weiß
+        'QPR': '#0000FF',  # Blau
+        'RBL': '#D40511',  # Rot
+        'Rangers': '#0C1C8C',  # Blau
+        'Rayo Vallecano': '#CE2029',  # Rot
+        'Real Betis': '#004D98',  # Blau
+        'Real Madrid': '#FFFFFF',  # Weiß
+        'Real Sociedad': '#0069AA',  # Blau
+        'Real Valladolid': '#560319',  # Dunkelrot
+        'Reims': '#ED1C24',  # Rot
+        'Rennes': '#ED1C24',  # Rot
+        'Rio Ave': '#008000',  # Grün
+        'Roma': '#9D2933',  # Weinrot
+        'Royal Antwerp': '#FA1A1A',  # Rot
+
+        'PEC Zwolle': '#0000FF',  # Blau
+        'Pacos de Ferreira': '#FFD700',  # Gold
+        'Paderborn': '#0000FF',  # Blau
+        'Panathinaikos': '#008000',  # Grün
+        'Pendikspor': '#FF4500',  # Orange
+        'Plymouth': '#008000',  # Grün
+        'Portimonense': '#000000',  # Schwarz
+        'Qarabag FK': '#0000FF',  # Blau
+        'RFC Seraing': '#FFD700',  # Gold
+        'RKC Waalwijk': '#0000FF',  # Blau
+        'RWD Molenbeek': '#FF0000',  # Rot
+        'Rakow Czestochowa': '#0000FF',  # Blau
+        'Reading': '#0000FF',  # Blau
+        'Rizespor': '#00FF00',  # Grün
+        'Rotherham': '#FF0000',  # Rot
+
+        'Salzburg': '#D80027',  # Rot
+        'Sampdoria': '#1C39BB',  # Blau
+        'Sassuolo': '#008F39',  # Grün
+        'Schalke': '#0055A4',  # Blau
+        'Sevilla': '#ED1C24',  # Rot
+        'Shakhtar': '#FF6A00',  # Orange
+        'Sheff Utd': '#EE2737',  # Rot
+        'Southampton': '#D71920',  # Rot
+        'Sporting': '#009A3E',  # Grün
+        'Stuttgart': '#e32219',  # Rot
+        'Sunderland': '#FF0000',  # Rot
+        'Swansea': '#FFA500',  # Orange
+
+        'SC Heerenveen': '#0000FF',  # Blau
+        'Salernitana': '#8A1538',  # Weinrot
+        'Santa Clara': '#FF0000',  # Rot
+        'Servette FC': '#DD0000',  # Rot
+        'Sheff Wed': '#003399',  # Blau
+        'Sivasspor': '#FF4500',  # Orange
+        'Slavia Prague': '#C8102E',  # Rot
+        'Sparta Prague': '#FF0000',  # Rot
+        'Sparta Rotterdam': '#FF4500',  # Orange
+        'Spezia': '#000080',  # Dunkelblau
+        'Sporting Charleroi': '#000000',  # Schwarz
+        'St. Pauli': '#FFD700',  # Gold
+        'St.Truiden': '#FADA5E',  # Gold
+        'Standard Liege': '#ED2939',  # Rot
+        'Stoke': '#E03A3E',  # Rot
+        'Strasbourg': '#1E73BE',  # Blau
+        'Sturm Graz': '#000000',  # Schwarz
+        'Sandhausen': '#000000',  # Schwarz
+
+        'Torino': '#8B0000',  # Dunkelrot
+        'Tottenham': '#132257',  # Dunkelblau
+        'Toulouse': '#800080',  # Lila
+        'Trabzonspor': '#D52B1E',  # Rot
+        'Troyes': '#1E90FF',  # Blau
+        'Twente': '#FF0000',  # Rot
+        'Udinese': '#000000',  # Schwarz
+        'Union Berlin': '#000000',  # Schwarz
+        'Valencia': '#F47920',  # Dunkelorange
+        'Verona': '#1E90FF',  # Hellblau
+        'Villarreal': '#FFC72C',  # Dunkelgelb
+        'Vitesse': '#FFD700',  # Gold
+        'Watford': '#FBEC5D',  # Gelb
+        'Werder Bremen': '#137F49',  # Dunkelgrün
+        'West Ham': '#7A263A',  # Burgund
+        'Wolfsburg': '#6DBA42',  # Grün
+        'Wolves': '#FDB913',  # Gold
+        'Young Boys': '#FDEE00',  # Gelb
+
+        'TSC Backa Topola': '#FF4500',  # Orange
+        'Union St.Gilloise': '#FFD700',  # Gold
+        'Vitoria de Guimaraes': '#0000FF',  # Blau
+        'Vizela': '#0000CD',  # Dunkelblau
+        'WBA': '#0000CD',  # Dunkelblau
+        'Westerlo': '#FFD700',  # Gold
+        'Wigan': '#0000FF',  # Blau
+        'Zulte Waregem': '#FF0000',  # Rot
+        'Wehen Wiesbaden': '#FFD700',  # Gold
+        'Umraniyespor': '#FF4500',  # Orange
+
+    }
+    return team_colors
